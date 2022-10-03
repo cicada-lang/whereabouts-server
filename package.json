@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@cicada-lang/cicada-whereabouts": "^0.1.10",
     "express": "^4.17.2"
   }
 }
