@@ -13,10 +13,21 @@ app.post(
     const url = new URL("whereabouts-server://")
     const loader = new Loader()
     loader.fetcher.register("whereabouts-server", (url) => "")
-    const mod = await loader.load(url, { text })
-    const outputs = Array.from(mod.outputs.values())
-    res.setHeader("Content-Type", "application/jsonl")
-    res.send(outputs.join("\n"))
+
+    try {
+      const mod = await loader.load(url, { text })
+      const outputs = Array.from(mod.outputs.values())
+      res.setHeader("Content-Type", "application/jsonl")
+      res.send(outputs.join("\n"))
+    } catch (error) {
+      if (!(error instanceof Error)) {
+        res.send(JSON.stringify(error))
+      } else if (error instanceof Errors.ParsingError) {
+        res.send(error.report(text))
+      } else {
+        res.send(error.message)
+      }
+    }
   }),
 )
 
