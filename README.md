@@ -1,6 +1,6 @@
 # Cicada Whereabouts Server
 
-[ [REPO](https://github.com/cicada-lang/cicada-whereabouts) ]
+[ [MAIN PROJECT](https://github.com/cicada-lang/cicada-whereabouts) ]
 
 ## Usage
 
