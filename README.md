@@ -2,6 +2,14 @@
 
 [ [REPO](https://github.com/cicada-lang/cicada-whereabouts) ]
 
+## Usage
+
+```
+curl https://api.whereabouts.cicada-lang.org/run \
+  -H 'Content-Type: text/plain' \
+  -d @docs/tests/clause-and-effect/worksheet-01-party-pairs.cw
+```
+
 ## Contributions
 
 To make a contribution, fork this project and create a pull request.
