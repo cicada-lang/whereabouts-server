@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@cicada-lang/cicada-whereabouts": "^0.1.10",
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "express-async-handler": "^1.2.0"
   }
 }

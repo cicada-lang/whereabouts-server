@@ -1,16 +1,23 @@
-const app = require("express")()
-const Whereabouts = require("@cicada-lang/cicada-whereabouts")
+const express = require("express")
+const asyncHandler = require("express-async-handler")
+const { Loader, Mod, Errors } = require("@cicada-lang/cicada-whereabouts")
 
-app.get("/hi", (req, res) => {
-  res.setHeader("Content-Type", "text/html")
-  res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate")
-  res.end("Hello world!")
-})
+const app = express()
 
-app.get("/run", (req, res) => {
-  res.setHeader("Content-Type", "text/html")
-  res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate")
-  res.end("Whereabouts!")
-})
+app.use(express.text())
+
+app.post(
+  "/run",
+  asyncHandler(async (req, res) => {
+    const text = req.body
+    const url = new URL("whereabouts-server://")
+    const loader = new Loader()
+    loader.fetcher.register("whereabouts-server", (url) => "")
+    const mod = await loader.load(url, { text })
+    const outputs = Array.from(mod.outputs.values())
+    res.setHeader("Content-Type", "application/jsonl")
+    res.send(outputs.join("\n"))
+  }),
+)
 
 module.exports = app
