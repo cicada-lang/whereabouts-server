@@ -4,7 +4,7 @@ const { Loader, Mod, Errors } = require("@cicada-lang/cicada-whereabouts")
 
 const app = express()
 
-app.use(express.text())
+app.use(express.text({ type: "*/*" }))
 
 app.post(
   "/run",

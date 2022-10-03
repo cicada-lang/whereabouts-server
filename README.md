@@ -4,10 +4,36 @@
 
 ## Usage
 
-```
+Run a file:
+
+```bash
 curl https://api.whereabouts.cicada-lang.org/run \
-  -H 'Content-Type: text/plain' \
   -d @docs/tests/clause-and-effect/worksheet-01-party-pairs.cw
+```
+
+Run a multiline text (bash and zsh):
+
+```bash
+curl https://api.whereabouts.cicada-lang.org/run -d @- <<END
+
+Drink { person: "john", alcohol: "martini" }
+Drink { person: "mary", alcohol: "gin" }
+Drink { person: "susan", alcohol: "vodka" }
+Drink { person: "john", alcohol: "gin" }
+Drink { person: "fred", alcohol: "gin" }
+Drink { person: "fred", alcohol: "vodka" }
+
+Friends { left, right, alcohol }
+------------------------------------ {
+  Drink { person: left, alcohol }
+  Drink { person: right, alcohol }
+}
+
+query (left) {
+  Friends { left, right: "mary", alcohol: "gin" }
+}
+
+END
 ```
 
 ## Contributions
