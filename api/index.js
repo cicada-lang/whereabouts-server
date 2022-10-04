@@ -1,6 +1,6 @@
 const express = require("express")
 const asyncHandler = require("express-async-handler")
-const { Loader, Mod, Errors } = require("@cicada-lang/cicada-whereabouts")
+const { Loader, Mod, Errors } = require("@cicada-lang/whereabouts")
 
 const app = express()
 
