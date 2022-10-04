@@ -28,7 +28,7 @@ Friends { left, right, alcohol }
   Drink { person: right, alcohol }
 }
 
-query (left) {
+query left {
   Friends { left, right: "mary", alcohol: "gin" }
 }
 
@@ -56,7 +56,7 @@ Friends { left, right, alcohol }
   Drink { person: right, alcohol }
 }
 
-query (left) {
+query left {
   Friends { left, right: "mary", alcohol: "gin" }
 }
 
