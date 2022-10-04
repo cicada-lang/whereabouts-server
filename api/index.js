@@ -7,7 +7,7 @@ const app = express()
 app.use(express.text({ type: "*/*" }))
 
 app.post(
-  "/run",
+  "/",
   asyncHandler(async (req, res) => {
     const text = req.body
     const url = new URL("whereabouts-server://")

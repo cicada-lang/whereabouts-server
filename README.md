@@ -7,13 +7,13 @@
 Run a file:
 
 ```bash
-curl https://api.whereabouts.cicada-lang.org/run --data-binary @docs/tests/clause-and-effect/worksheet-01-party-pairs.cw
+curl https://run.whereabouts.cicada-lang.org --data-binary @docs/tests/clause-and-effect/worksheet-01-party-pairs.cw
 ```
 
 Run multiline text (bash and zsh):
 
 ```bash
-curl https://api.whereabouts.cicada-lang.org/run --data-binary @- << END
+curl https://run.whereabouts.cicada-lang.org --data-binary @- << END
 
 Drink { person: "john", alcohol: "martini" }
 Drink { person: "mary", alcohol: "gin" }
@@ -41,7 +41,7 @@ You can pipe them to [**jq**](https://stedolan.github.io/jq/) to format them:
 - Note that, we use `curl -s` to disable curl's progress bar.
 
 ```bash
-curl -s https://api.whereabouts.cicada-lang.org/run --data-binary @- << END | jq
+curl -s https://run.whereabouts.cicada-lang.org --data-binary @- << END | jq
 
 Drink { person: "john", alcohol: "martini" }
 Drink { person: "mary", alcohol: "gin" }
