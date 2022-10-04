@@ -18,7 +18,7 @@ app.post(
       const mod = await loader.load(url, { text })
       const outputs = Array.from(mod.outputs.values())
       res.setHeader("Content-Type", "application/jsonl")
-      res.send(outputs.join("\n"))
+      res.send(outputs.join("\n") + "\n")
     } catch (error) {
       if (!(error instanceof Error)) {
         res.send(JSON.stringify(error))
