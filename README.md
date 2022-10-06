@@ -1,6 +1,6 @@
 # Whereabouts Server
 
-A serverless function that can run [whereabouts code](https://github.com/cicada-lang/whereabouts).
+A serverless function that can run [**whereabouts**](https://github.com/cicada-lang/whereabouts) code.
 
 ## Usage
 
