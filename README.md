@@ -1,8 +1,6 @@
 # Whereabouts Server
 
-[ [MAIN PROJECT](https://github.com/cicada-lang/whereabouts) ]
-
-A serverless function that can run [logic programming code](https://github.com/cicada-lang/whereabouts).
+A serverless function that can run [whereabouts code](https://github.com/cicada-lang/whereabouts).
 
 ## Usage
 
