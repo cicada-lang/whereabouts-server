@@ -12,14 +12,7 @@ app.post(
   asyncHandler(async (req, res) => {
     const text = req.body
     const url = new URL("whereabouts-server://")
-    const loader = new Loader({
-      debugger: {
-        report(solver) {
-          console.log("---")
-          console.log(solver.reportFormatYAML())
-        },
-      },
-    })
+    const loader = new Loader({})
 
     loader.fetcher.register("whereabouts-server", (url) => "")
 
