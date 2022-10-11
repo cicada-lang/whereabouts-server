@@ -7,7 +7,7 @@ A serverless function that can run [**whereabouts**](https://github.com/cicada-l
 Run a file:
 
 ```bash
-curl https://wa.cic.run --data-binary @docs/tests/clause-and-effect/01-party-pairs.cw
+curl https://wa.cic.run --data-binary @docs/tests/clause-and-effect/01-party-pairs.wa
 ```
 
 Run multiline text (bash and zsh):
@@ -37,8 +37,6 @@ END
 
 The outputs are [JSON lines](https://jsonlines.org) -- one query one line,
 You can pipe them to [**jq**](https://stedolan.github.io/jq/) to format them:
-
-- Note that, we use `curl -s` to disable curl's progress bar.
 
 ```bash
 curl -s https://wa.cic.run --data-binary @- << END | jq
