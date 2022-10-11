@@ -7,7 +7,7 @@ A serverless function that can run [**whereabouts**](https://github.com/cicada-l
 Run a file:
 
 ```bash
-curl https://wa.cic.run --data-binary @docs/tests/clause-and-effect/worksheet-01-party-pairs.cw
+curl https://wa.cic.run --data-binary @docs/tests/clause-and-effect/01-party-pairs.cw
 ```
 
 Run multiline text (bash and zsh):
