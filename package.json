@@ -4,13 +4,13 @@
     "format": "prettier api --write"
   },
   "dependencies": {
-    "@cicada-lang/whereabouts": "^0.2.37",
+    "@cicada-lang/whereabouts": "^0.2.38",
     "express": "^4.18.2",
     "express-async-handler": "^1.2.0",
     "node-fetch": "^2.6.7"
   },
   "devDependencies": {
-    "prettier": "^2.8.0",
+    "prettier": "^2.8.1",
     "prettier-plugin-organize-imports": "^3.2.1"
   }
 }
