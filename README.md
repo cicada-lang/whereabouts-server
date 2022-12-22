@@ -15,47 +15,10 @@ Run multiline text (bash and zsh):
 ```bash
 curl https://wa.cic.run --data-binary @-<< END
 
-Drink { person: "john", alcohol: "martini" }
-Drink { person: "mary", alcohol: "gin" }
-Drink { person: "susan", alcohol: "vodka" }
-Drink { person: "john", alcohol: "gin" }
-Drink { person: "fred", alcohol: "gin" }
-Drink { person: "fred", alcohol: "vodka" }
+Whereabouts("unknown")
 
-Friends { left, right, alcohol }
------------------------------------- {
-  Drink { person: left, alcohol }
-  Drink { person: right, alcohol }
-}
-
-find left {
-  Friends { left, right: "mary", alcohol: "gin" }
-}
-
-END
-```
-
-The outputs are [JSON lines](https://jsonlines.org) -- one query one line,
-You can pipe them to [**jq**](https://stedolan.github.io/jq/) to format them:
-
-```bash
-curl -s https://wa.cic.run --data-binary @-<< END | jq
-
-Drink { person: "john", alcohol: "martini" }
-Drink { person: "mary", alcohol: "gin" }
-Drink { person: "susan", alcohol: "vodka" }
-Drink { person: "john", alcohol: "gin" }
-Drink { person: "fred", alcohol: "gin" }
-Drink { person: "fred", alcohol: "vodka" }
-
-Friends { left, right, alcohol }
------------------------------------- {
-  Drink { person: left, alcohol }
-  Drink { person: right, alcohol }
-}
-
-find left {
-  Friends { left, right: "mary", alcohol: "gin" }
+find q {
+  Whereabouts(q)
 }
 
 END
